@@ -1,6 +1,48 @@
-@import 'core/settings';
+@import "core/settings";
 
+// body {
+// 	background: url('../images/logo-adalab-80px.png') center center no-repeat $color-white;
+// 	height: 100vh;
+// }
+
+//common
 body {
-	background: url('../images/logo-adalab-80px.png') center center no-repeat $color-white;
-	height: 100vh;
+  margin: 0;
+}
+.page__wrapper {
+  height: 100vh;
+}
+
+//header
+.header__logo-img {
+  width: 50px;
+}
+
+//main
+
+//footer
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+.footer__wrapper {
+  // position: relative;
+  // width: 100vw;
+}
+.btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.btn__footer {
+  // position: absolute;
+  // margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border: 4px solid green;
+  border-radius: 50%;
+}
+.btn__footer-icon {
+  font-size: 20px;
+  color: green;
 }
