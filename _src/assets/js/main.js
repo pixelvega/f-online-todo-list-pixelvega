@@ -12,13 +12,16 @@ const showInputTask = () => {};
 
 const addNewTask = () => {
   const valueTask = inputNewTask.value;
-  const newTask = {
-    name: valueTask,
-    completed: false
-  };
-  tasks.push(newTask);
-  inputNewTask.value = "";
-  showTasks();
+  if (valueTask.length > 0) {
+    const newTask = {
+      name: valueTask,
+      completed: false
+    };
+    tasks.push(newTask);
+    inputNewTask.value = "";
+    saveLocalStorage(tasks);
+    showTasks();
+  }
 };
 
 const showTasks = () => {
@@ -68,9 +71,22 @@ const showTasks = () => {
 function checkTask(e) {
   const indexEl = e.currentTarget.getAttribute("data-id");
   tasks[indexEl].completed = !tasks[indexEl].completed;
-
+  saveLocalStorage(tasks);
   showTasks();
 }
+
+const checkLocalStorage = () => {
+  if (localStorage.getItem("tasks").length > 0) {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+    showTasks();
+  }
+};
+
+const saveLocalStorage = tasks => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+
+checkLocalStorage();
 
 btnShowInput.addEventListener("click", showInputTask);
 btnAddTask.addEventListener("click", addNewTask);
