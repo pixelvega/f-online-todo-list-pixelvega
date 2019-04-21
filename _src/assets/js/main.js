@@ -1,4 +1,5 @@
 "use strict";
+
 const btnShowInput = document.querySelector(".btn__footer");
 const inputNewTask = document.querySelector(".new-task__input");
 const btnAddTask = document.querySelector(".new-task__btn");
@@ -6,7 +7,6 @@ const tasksIncompleted = document.querySelector(".tasks__list-incompleted");
 const tasksCompleted = document.querySelector(".tasks__list-completed");
 
 let tasks = [];
-let date = new Date();
 
 const showInputTask = () => {};
 
@@ -54,7 +54,7 @@ const showTasks = () => {
     const newTask = document.createTextNode(tasks[i].name);
     labelEl.appendChild(newTask);
 
-    // Distribute items in the list of completed and incomplete tasks
+    // Distribute tasks in the list of completed and incompleted tasks
     if (tasks[i].completed) {
       inputEl.setAttribute("checked", tasks[i].completed);
       tasksCompleted.appendChild(liEl);
