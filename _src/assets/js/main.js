@@ -5,10 +5,26 @@ const inputNewTask = document.querySelector(".new-task__input");
 const btnAddTask = document.querySelector(".new-task__btn");
 const tasksIncompleted = document.querySelector(".tasks__list-incompleted");
 const tasksCompleted = document.querySelector(".tasks__list-completed");
+const pageWrapperEl = document.querySelector(".page__wrapper");
+const newTaskEl = document.querySelector(".new-task__wrapper");
+const pageMainEl = document.querySelector(".page__main");
 
 let tasks = [];
 
-const showInputTask = () => {};
+const toggleClass = () => {
+  //pageWrapperEl.classList.toggle("overlay");
+  newTaskEl.classList.toggle("hidden");
+};
+
+const showInputTask = () => {
+  toggleClass();
+};
+
+const hideInputTask = () => {
+  console.log("click en pageWrapper");
+  pageWrapperEl.classList.remove("overlay");
+  newTaskEl.classList.add("hidden");
+};
 
 const addNewTask = () => {
   const valueTask = inputNewTask.value;
@@ -21,6 +37,7 @@ const addNewTask = () => {
     inputNewTask.value = "";
     saveLocalStorage(tasks);
     showTasks();
+    toggleClass();
   }
 };
 
@@ -76,9 +93,11 @@ function checkTask(e) {
 }
 
 const checkLocalStorage = () => {
-  if (localStorage.getItem("tasks").length > 0) {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-    showTasks();
+  if (localStorage.getItem("tasks") !== null) {
+    if (localStorage.getItem("tasks").length > 0) {
+      tasks = JSON.parse(localStorage.getItem("tasks"));
+      showTasks();
+    }
   }
 };
 
@@ -90,3 +109,4 @@ checkLocalStorage();
 
 btnShowInput.addEventListener("click", showInputTask);
 btnAddTask.addEventListener("click", addNewTask);
+//newTaskEl.addEventListener("click", hideInputTask);
