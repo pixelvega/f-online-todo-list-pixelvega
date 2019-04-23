@@ -5,14 +5,13 @@ const inputNewTask = document.querySelector(".new-task__input");
 const btnAddTask = document.querySelector(".new-task__btn");
 const tasksIncompleted = document.querySelector(".tasks__list-incompleted");
 const tasksCompleted = document.querySelector(".tasks__list-completed");
-const pageWrapperEl = document.querySelector(".page__wrapper");
 const newTaskEl = document.querySelector(".new-task__wrapper");
 const pageMainEl = document.querySelector(".page__main");
+const overlay = document.querySelector(".new-task__overlay");
 
 let tasks = [];
 
 const toggleClass = () => {
-  //pageWrapperEl.classList.toggle("overlay");
   newTaskEl.classList.toggle("hidden");
 };
 
@@ -21,8 +20,7 @@ const showInputTask = () => {
 };
 
 const hideInputTask = () => {
-  console.log("click en pageWrapper");
-  pageWrapperEl.classList.remove("overlay");
+  inputNewTask.value = "";
   newTaskEl.classList.add("hidden");
 };
 
@@ -42,7 +40,6 @@ const addNewTask = () => {
 };
 
 const showTasks = () => {
-  console.log(tasks);
   // Clean DOM
   tasksIncompleted.innerHTML = "";
   tasksCompleted.innerHTML = "";
@@ -109,4 +106,4 @@ checkLocalStorage();
 
 btnShowInput.addEventListener("click", showInputTask);
 btnAddTask.addEventListener("click", addNewTask);
-//newTaskEl.addEventListener("click", hideInputTask);
+overlay.addEventListener("click", hideInputTask);
