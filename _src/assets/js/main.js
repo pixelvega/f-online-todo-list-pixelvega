@@ -6,7 +6,6 @@ const btnAddTask = document.querySelector(".new-task__btn");
 const tasksIncompleted = document.querySelector(".tasks__list-incompleted");
 const tasksCompleted = document.querySelector(".tasks__list-completed");
 const newTaskEl = document.querySelector(".new-task__wrapper");
-const pageMainEl = document.querySelector(".page__main");
 const overlay = document.querySelector(".new-task__overlay");
 
 let tasks = [];
@@ -51,6 +50,7 @@ const showTasks = () => {
 
     //  Create label
     const labelEl = document.createElement("label");
+    labelEl.setAttribute("class", "main__task-label");
     labelEl.setAttribute("for", "task");
     labelEl.setAttribute("id", i);
 
