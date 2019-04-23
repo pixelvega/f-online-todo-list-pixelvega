@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <title>Todo list - pixelvega</title>
+        <link rel="icon" href="assets/images/icons/space-invaders.png"
+        />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous" />
+    </head>
+    
+    <body>
+        <div class="page__wrapper">
+            <header class="page__header">
+                <div class="header__logo">
+                    <img class="header__logo-img" src="assets/images/svg/green-alien.svg"
+                    alt="logo todo list pixelvega" />
+                </div>
+                <p class="header__date-wrapper"> <span class="header__date-day-num"></span>
+ <span class="date-wrapper">
+      <span class="header__date-day-name"></span>
+ <span class="header__date-month-year"></span>
+</span>
+                </p>
+            </header>
+            <main class="page__main ">
+                <ul class="tasks__list-incompleted">
+                    <!-- <li class="tasks__list-item">
+      <label class="tasks__list-label">
+        <input class="tasks__list-input" type="checkbox" />
+        Este es mi primera tarea
+      </label>
+    </li> -->
+                </ul>
+                <ul class="tasks__list-completed"></ul>
+            </main>
+            <div class="new-task__wrapper hidden">
+                <div class="new-task__overlay"></div>
+                <div class="new-task">
+                    <label class="new-task__label">Nueva tarea
+                        <input class="new-task__input" type="text" placeholder="Tarea..."
+                        />
+                    </label>
+                    <button class="btn new-task__btn">Añadir</button>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer__wrapper">
+                    <button class="btn btn__footer"> <i class="fas fa-plus btn__footer-icon"></i>
+
+                    </button>
+                </div>
+            </footer>
+        </div>
+        <script src="assets/js/main.js"></script>
+    </body>
+
+</html>
