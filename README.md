@@ -1,7 +1,7 @@
 # Prueba técnica: Lista de tareas
 
 Desarrollo de una aplicación simple de lista de tareas con una funcionalidad básica:
-1. Marcar una taea como completada
+1. Marcar una tarea como completada
 2. Desmarcar una tarea completada 
 3. Añadir una tarea nueva
 
